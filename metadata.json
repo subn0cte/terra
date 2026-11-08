@@ -1,0 +1,6 @@
+{
+  "name": "terra",
+  "description": "text minimalist daily country guessing game",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
