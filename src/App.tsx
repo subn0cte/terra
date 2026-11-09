@@ -39,6 +39,24 @@ import {
 
 type Screen = 'TITLE' | 'PLAYING' | 'RESULTS' | 'GG' | 'QUESTS_MENU' | 'QUEST_RESULT';
 
+function FooterCredit({ className = 'pt-8' }: { className?: string }) {
+  return (
+    <footer className={`w-full text-center ${className}`}>
+      <p className="text-xs text-zinc-600 font-mono lowercase">
+        this game is made by{' '}
+        <a
+          href="https://subn0cte.github.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-caveat text-base text-zinc-400 hover:text-zinc-100 transition-colors inline-block ml-0.5 underline decoration-zinc-700 underline-offset-3"
+        >
+          subnocte
+        </a>
+      </p>
+    </footer>
+  );
+}
+
 export default function App() {
   const [screen, setScreen] = useState<Screen>('TITLE');
   const [todayDate] = useState<string>(getTodayDateString());
@@ -514,7 +532,7 @@ export default function App() {
       `🗣️ language: ${solved.language ? '🟩' : '🟥'} (${attempts.language} att)`,
       `🚩 flag: ${solved.flag ? '🟩' : '🟥'} (${attempts.flag} att)`,
       ``,
-      `terra by misiori · misiori.github.io`,
+      `terra by subnocte · subn0cte.github.io/`,
     ].join('\n');
 
     if (navigator.clipboard) {
@@ -535,7 +553,7 @@ export default function App() {
   // --------------------------------------------------------------------------
   // SCREEN 1: TITLE SCREEN
   // Minimalist lowercase layout: headbang font logo, description, play button,
-  // credit by misiori in Caveat, and side quests section when daily is done!
+  // credit by subnocte in Caveat, and side quests section when daily is done!
   // --------------------------------------------------------------------------
   if (screen === 'TITLE') {
     return (
@@ -602,20 +620,8 @@ export default function App() {
           </div>
         </div>
 
-        {/* Footer Credit: this game is made by misiori (written in caveat), link to the websiteis misiori.github.io. */}
-        <footer className="w-full text-center pt-8">
-          <p className="text-xs text-zinc-600 font-mono lowercase">
-            this game is made by{' '}
-            <a
-              href="https://misiori.github.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-caveat text-base text-zinc-400 hover:text-zinc-100 transition-colors inline-block ml-0.5 underline decoration-zinc-700 underline-offset-3"
-            >
-              misiori
-            </a>
-          </p>
-        </footer>
+        {/* Footer Credit */}
+        <FooterCredit />
       </main>
     );
   }
@@ -742,19 +748,7 @@ export default function App() {
         </div>
 
         {/* Footer Credit */}
-        <footer className="w-full text-center pt-6 border-t border-zinc-900">
-          <p className="text-xs text-zinc-600 font-mono lowercase">
-            this game is made by{' '}
-            <a
-              href="https://misiori.github.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-caveat text-base text-zinc-400 hover:text-zinc-100 transition-colors inline-block underline decoration-zinc-700 underline-offset-3"
-            >
-              misiori
-            </a>
-          </p>
-        </footer>
+        <FooterCredit className="pt-6 border-t border-zinc-900" />
       </main>
     );
   }
@@ -829,19 +823,7 @@ export default function App() {
         </div>
 
         {/* Footer Credit */}
-        <footer className="w-full text-center pt-6 border-t border-zinc-900">
-          <p className="text-xs text-zinc-600 font-mono lowercase">
-            this game is made by{' '}
-            <a
-              href="https://misiori.github.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-caveat text-base text-zinc-400 hover:text-zinc-100 transition-colors inline-block underline decoration-zinc-700 underline-offset-3"
-            >
-              misiori
-            </a>
-          </p>
-        </footer>
+        <FooterCredit className="pt-6 border-t border-zinc-900" />
       </main>
     );
   }
@@ -880,19 +862,7 @@ export default function App() {
           </div>
         </div>
 
-        <footer className="w-full text-center pt-8">
-          <p className="text-xs text-zinc-600 font-mono lowercase">
-            this game is made by{' '}
-            <a
-              href="https://misiori.github.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-caveat text-base text-zinc-400 hover:text-zinc-100 transition-colors inline-block underline decoration-zinc-700 underline-offset-3"
-            >
-              misiori
-            </a>
-          </p>
-        </footer>
+        <FooterCredit />
       </main>
     );
   }
@@ -1025,19 +995,7 @@ export default function App() {
         </div>
 
         {/* Footer Credit */}
-        <footer className="w-full text-center pt-6 border-t border-zinc-900">
-          <p className="text-xs text-zinc-600 font-mono lowercase">
-            this game is made by{' '}
-            <a
-              href="https://misiori.github.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-caveat text-base text-zinc-400 hover:text-zinc-100 transition-colors inline-block underline decoration-zinc-700 underline-offset-3"
-            >
-              misiori
-            </a>
-          </p>
-        </footer>
+        <FooterCredit className="pt-6 border-t border-zinc-900" />
       </main>
     );
   }
@@ -1311,19 +1269,7 @@ export default function App() {
       />
 
       {/* Footer minimal credit */}
-      <footer className="w-full text-center pt-3 border-t border-zinc-900">
-        <p className="text-xs text-zinc-600 font-mono lowercase">
-          this game is made by{' '}
-          <a
-            href="https://misiori.github.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-caveat text-base text-zinc-400 hover:text-zinc-100 transition-colors inline-block underline decoration-zinc-700 underline-offset-3"
-          >
-            misiori
-          </a>
-        </p>
-      </footer>
+      <FooterCredit className="pt-3 border-t border-zinc-900" />
     </main>
   );
 }
